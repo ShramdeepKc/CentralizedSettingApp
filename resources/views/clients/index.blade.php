@@ -23,6 +23,9 @@
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.index') }}"> Show Products</a>
             </div><br>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('products.create') }}"> Show Products</a>
+            </div><br>
             
    
     @if ($message = Session::get('success'))
