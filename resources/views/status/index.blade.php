@@ -1,13 +1,23 @@
-@extends('status.layout')
+@extends('adminlte::page')
+
+@section('title')
+
+@section('content_header')
  
+@stop
+
 @section('content')
-    <div class="row">
+<div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Client View</h2>
+                <h2>Status View</h2>
             </div>
         </div>
     </div>
+    <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('status.create') }}"> Create</a>
+            </div><br> 
+    
    
    
     @if ($message = Session::get('success'))
@@ -54,3 +64,13 @@
     </table>
   
     {!! $status->links() !!}
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop
+   

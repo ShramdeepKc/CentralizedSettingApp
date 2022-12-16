@@ -1,13 +1,22 @@
-@extends('federals.layout')
- 
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    
+@stop
+
 @section('content')
-    <div class="row">
+<div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Federal View</h2>
             </div>
         </div>
     </div>
+    <div class="pull-left">
+                <a class="btn btn-danger" href="{{ route('federals.create') }}"> Create New federals</a>
+            </div><br>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -44,4 +53,14 @@
     </table>
   
     {!! $federals->links() !!}
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop
+  
       

@@ -1,7 +1,13 @@
-@extends('clients.layout')
- 
+@extends('adminlte::page')
+
+@section('title')
+
+@section('content_header')
+  <!--  -->
+@stop
+
 @section('content')
-    <div class="row">
+<div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Client View</h2>
@@ -11,7 +17,7 @@
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('clients.create') }}"> Create New Client</a>
             </div><br>
-            <div class="pull-left">
+            <!-- <div class="pull-left">
                 <a class="btn btn-danger" href="{{ route('federals.create') }}"> Create New federals</a>
             </div><br>
             <div class="pull-left">
@@ -25,7 +31,7 @@
             </div><br>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Show Products</a>
-            </div><br>
+            </div><br> -->
             
    
     @if ($message = Session::get('success'))
@@ -71,3 +77,12 @@
   
     {!! $clients->links() !!}
       
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

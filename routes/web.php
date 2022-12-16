@@ -19,9 +19,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('federals', FederalController::class);
-Route::resource('clients', ClientController::class);
-Route::resource('products', ProductController::class);
-Route::resource('status', StatusController::class);
+Route::resource('federals', FederalController::class)
+->middleware(['auth']);
+Route::resource('clients', ClientController::class)
+->middleware(['auth']);
+Route::resource('products', ProductController::class)->middleware(['auth']);;
+Route::resource('status', StatusController::class)->middleware(['auth']);;
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+
+})->middleware(['auth'])->name('dashboard');
 
 
+require __DIR__.'/auth.php';
