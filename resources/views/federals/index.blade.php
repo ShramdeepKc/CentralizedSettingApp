@@ -14,9 +14,11 @@
             </div>
         </div>
     </div>
+    @role('admin')
     <div class="pull-left">
                 <a class="btn btn-danger" href="{{ route('federals.create') }}"> Create New federals</a>
             </div><br>
+    @endrole
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -37,7 +39,7 @@
             <td>{{ $federal->name }}</td>
             <td>{{ $federal->code }}</td>
             <td>
-
+        @role('admin')
             <form action="{{ route('federals.destroy',$federal->id) }}" method="POST">
                 
     
@@ -47,6 +49,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+            @endrole
             </td>
         </tr>
         @endforeach

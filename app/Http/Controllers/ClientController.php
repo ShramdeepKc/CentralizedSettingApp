@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Federal;
 use Illuminate\Http\Request;
 
+
 class ClientController extends Controller
 {
     /**
@@ -16,9 +17,9 @@ class ClientController extends Controller
     public function index()
     {
         // $data = [];
-        $federals = Federal::all();
-        
+       
 
+        $federals = Federal::all();
         // return $arr;
        
         $clients = Client::latest()->paginate(5);

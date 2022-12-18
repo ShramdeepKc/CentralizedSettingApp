@@ -14,9 +14,11 @@
             </div>
         </div>
     </div>
+    @role('admin')
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('clients.create') }}"> Create New Client</a>
             </div><br>
+  @endrole
             <!-- <div class="pull-left">
                 <a class="btn btn-danger" href="{{ route('federals.create') }}"> Create New federals</a>
             </div><br>
@@ -60,7 +62,7 @@
             <td>{{ $client->name }}</td>
             <td>{{ $client->code }}</td>
             <td>
-           
+           @role('admin')
             <form action="{{ route('clients.destroy',$client->id) }}" method="POST">
                     <a class="btn btn-primary" href="{{ route('clients.edit',$client->id) }}">Edit</a>
                     @csrf
@@ -69,6 +71,7 @@
                     <button type="submit" class="btn btn-danger">Delete</button>
                 
             </form>
+            @endrole
             </td>
         </tr>
         @endforeach

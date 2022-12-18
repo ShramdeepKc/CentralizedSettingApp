@@ -14,10 +14,11 @@
             </div>
         </div>
     </div>
+    @role('admin')
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create  Products</a>
             </div><br> 
-   
+   @endrole
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
@@ -39,6 +40,7 @@
             <td>{{ $product->code }}</td>
             <td>{{ $product->description }}</td>
             <td>
+                @role('admin')
             <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                 
     
@@ -48,7 +50,7 @@
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
-
+                @endrole
           
             </td>
         </tr>

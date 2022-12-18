@@ -13,6 +13,8 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
+    
+   
 
     'title' => 'Client Settings App',
     'title_prefix' => '',

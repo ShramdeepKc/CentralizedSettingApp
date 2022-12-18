@@ -14,9 +14,11 @@
             </div>
         </div>
     </div>
+    @role('admin')
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('status.create') }}"> Create</a>
             </div><br> 
+            @endrole
     
    
    
@@ -46,6 +48,7 @@
             <td>{{ $stat->appurl }}</td>
            
             <td>
+                @role('admin')
             <form action="{{ route('status.destroy',$stat->id) }}" method="POST">
                 <a href="{{ route('status.edit',$stat->id)}}" class="btn btn-primary">Edit</a>
                 @csrf
@@ -53,6 +56,7 @@
 
                     <button type="submit" class="btn btn-danger">Delete</button>
             </td>
+            @endrole
                    
             </form>
                 
