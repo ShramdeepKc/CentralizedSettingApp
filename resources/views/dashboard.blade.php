@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p><b> Welcome to the Client Settings App Finally </b></p>
+
 @stop
 
 @section('css')
