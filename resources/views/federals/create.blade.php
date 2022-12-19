@@ -40,7 +40,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Code:</strong>
-                <textarea class="form-control"  name="code" placeholder="Code"></textarea>
+                <input type="code"  name="code" placeholder="Code"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
