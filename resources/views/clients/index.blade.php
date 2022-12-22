@@ -14,6 +14,7 @@
             </div>
         </div>
     </div>
+   
     @role('admin')
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('clients.create') }}"> Create New Client</a>

@@ -66,7 +66,6 @@ return [
     */
 
     'logo' => '<b>Client Managing</b>',
-    'url' => 'dashboard',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -293,12 +292,8 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-        [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
+        // // Navbar items:
+       
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
@@ -314,13 +309,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
+       
         ['header' => 'Client settings'],
         [
             'text' => 'Client',
@@ -337,7 +326,7 @@ return [
            
         ],
         [
-            'text'    => 'Products',
+            'text'    => 'Products Info',
             'icon'    => 'fas fa-dolly-flatbed',
             'url' => 'products'
         ],

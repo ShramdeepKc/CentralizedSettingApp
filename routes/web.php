@@ -3,6 +3,7 @@ use App\Http\Controllers\FederalController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,19 +18,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('dashboard');
+})->middleware(['auth']);
 Route::resource('federals', FederalController::class)
 ->middleware(['auth']);
 Route::resource('clients', ClientController::class)
 ->middleware(['auth']);
-Route::resource('products', ProductController::class)->middleware(['auth']);;
-Route::resource('status', StatusController::class)->middleware(['auth']);;
+Route::resource('products', ProductController::class)->middleware(['auth']);
+Route::resource('status', StatusController::class)->middleware(['auth']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-
-})->middleware(['auth'])->name('dashboard');
-
+Route::resource('dashboard', DashboardController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

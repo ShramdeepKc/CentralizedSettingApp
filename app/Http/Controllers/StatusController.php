@@ -13,16 +13,33 @@ class StatusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // $clients = Client::all();
+        // $products = Product::all();
+        // $status = Status::latest()->paginate(5);
+        $search = $request['search'] ?? "";
+        if($search != ""){
+                // $clients = Client::where('name','=',"$search")->get(); 
+                // $products = Product::where('name','=',"$search")->get(); 
+                $status = Status::leftjoin('clients', 'status.client_id', '=' ,'clients.id')
+                            ->where('clients.name', 'LIKE', "$search%")
+                           
+                             ->get(); 
+                // $status = Status::where('client_id','=',$search)->get(); 
+        }
+        else{
+            $clients = Client::all();
+        $products = Product::all();
+        $status = Status::latest()->paginate(5);
+
+        }
         $clients = Client::all();
         $products = Product::all();
 
-        // return $arr;
-       
-        $status = Status::latest()->paginate(5);
-        
-        return view('status.index',compact('clients','products','status'))
+
+
+        return view('status.index',compact('clients','products','status','search'))
             ->with('i');
     }
 

@@ -14,6 +14,15 @@
             </div>
         </div>
     </div>
+    <form action="" class="col-4">
+        <div class="form-group">
+        
+          <input type="search" name="search" id="" class="form-control" placeholder="Search by Name , Products or Status " aria-describedby="helpId" value="{{$search}}"><br>
+          <button class="btn btn-primary">Search</button>
+        </div>
+       
+        
+    </form>
     @role('admin')
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('status.create') }}"> Create</a>
@@ -40,7 +49,7 @@
         </tr>
        @foreach($status as $stat)     
         <tr>
-            <td>{{ ++$i }}</td>     
+            <td>{{ ++$i  }}</td>     
             <td>{{ $stat->client->name }}</td> 
             <td>{{ $stat->product->name }}</td>
             <td>{{ $stat->status }}</td>
@@ -67,7 +76,7 @@
       
     </table>
   
-    {!! $status->links() !!}
+   
 @stop
 
 @section('css')

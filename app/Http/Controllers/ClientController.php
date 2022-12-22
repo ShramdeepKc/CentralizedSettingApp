@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Federal;
 use Illuminate\Http\Request;
-
+use Spatie\Permission\Contracts\Role;
 
 class ClientController extends Controller
 {
@@ -16,6 +16,7 @@ class ClientController extends Controller
      */
     public function index()
     {
+       
         // $data = [];
        
 
