@@ -17,7 +17,7 @@
     <form action="" class="col-4">
         <div class="form-group">
         
-          <input type="search" name="search" id="" class="form-control" placeholder="Search by Name , Products or Status " aria-describedby="helpId" value="{{$search}}"><br>
+          <input type="search" name="search" id="" class="form-control" placeholder="Search by Name" aria-describedby="helpId" value="{{$search}}"><br>
           <button class="btn btn-primary">Search</button>
         </div>
        

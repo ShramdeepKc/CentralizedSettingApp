@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Product;
 use App\Models\Status;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -18,10 +20,14 @@ class DashboardController extends Controller
         $products = Product::count();
         $status = Status::count();
         $clients = Client::count();
+        $user = User::count();
+
+        // $list = DB::table('products')
+        //         ->select('name','id')->get();
         // dd($clients);
        
         // dd($total);
-        return view('dashboard',compact('clients','status','products'));
+        return view('dashboard',compact('clients','status','products','user'));
     }
 
     /**
