@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ApiStatusController;
+use App\Http\Controllers\API\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('status',[ApiStatusController::class,'status'])->name('status');
 Route::get('status/{id}',[ApiStatusController::class,'statusbyid']);
+Route::get('products',[ApiStatusController::class,'products']);

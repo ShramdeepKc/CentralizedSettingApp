@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 use App\Models\Status;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,4 +40,17 @@ class ApiStatusController extends Controller
     ]);
 
     }
+
+    public function products(){
+            // dd('hello');
+        $products = Product::all();
+            // dd($products);
+        return response()->json([
+            'products'=> true,
+            'message'=>'products listed',
+            'data'=>$products
+        ]);
+}
+
+
 }
