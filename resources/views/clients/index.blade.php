@@ -42,13 +42,14 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
+    <img src="{{URL::asset('/image/20221229101401.png')}}" alt="profile Pic" height="200" width="200">
     <table class="table table-bordered">
         <tr>
             <th>No</th>  
             <th>Federals</th>         
             <th>Name</th>
             <th>Code</th>
+            <th>Images</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($clients as $client)
@@ -62,6 +63,7 @@
            
             <td>{{ $client->name }}</td>
             <td>{{ $client->code }}</td>
+            <td><img src="/image/{{ $client->image }}" width="100px"></td>
             <td>
            @role('admin')
             <form action="{{ route('clients.destroy',$client->id) }}" method="POST">

@@ -54,9 +54,20 @@ class ClientController extends Controller
             'name' => 'required',
             'code' => 'required',
             'federal_id' => 'required',  
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            
         ]);
+        $input = $request->all();
+  
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalName(); 
+            //dd($image);
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
     
-        Client::create($request->all());
+        Client::create($input);
      
         return redirect()->route('clients.index')
                         ->with('success','clients added successfully.');

@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashboard');
-// })->middleware(['auth']);
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware(['auth']);
 Route::resource('federals', FederalController::class)
 ->middleware(['auth']);
 Route::resource('clients', ClientController::class)

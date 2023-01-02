@@ -9,7 +9,7 @@ class Client extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'code','federal_id'
+        'name', 'code','federal_id','image'
     ];
     public function federal(){
         return $this->belongsTo(Federal::class,'federal_id','id');

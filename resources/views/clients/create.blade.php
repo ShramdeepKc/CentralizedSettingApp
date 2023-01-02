@@ -26,7 +26,7 @@
     </div>
 @endif
    
-<form action="{{ route('clients.store') }}" method="POST">
+<form action="{{ route('clients.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
      <div class="row">
@@ -51,6 +51,19 @@
           @endforeach
      </select></div>
 </div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                <input type="file" name="image" class="form-control" placeholder="image">
+            </div>
+        </div>   
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <label for="filupDate">Birthday:</label>
+                 <input type="date" id="filup_date" name="filup_date">
+               </div>
+        </div> 
+                                                           
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">ADD</button>
