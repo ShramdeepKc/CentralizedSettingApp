@@ -21,13 +21,15 @@ class DashboardController extends Controller
         $status = Status::count();
         $clients = Client::count();
         $user = User::count();
+        $list=Client::all();
+     
 
         // $list = DB::table('products')
         //         ->select('name','id')->get();
         // dd($clients);
        
         // dd($total);
-        return view('dashboard',compact('clients','status','products','user'));
+        return view('dashboard',compact('clients','status','products','user','list'));
     }
 
     /**

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="{{ route('clients.update',$client->id) }}" method="POST">
+<form action="{{ route('clients.update',$client->id) }}" method="POST" enctype="multipart/form-data" >
         @csrf
         @method('PUT')
   
@@ -32,11 +32,11 @@
           <option value="{{$fed->id}}" {{ $fed->id == $client->federal_id ? 'selected' : '' }}>{{ $fed->name }}</option>
           @endforeach
      </select></div>
-     <div class="col-xs-12 col-sm-12 col-md-12">
+     <div class="col-xs-3 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Image:</strong>
                     <input type="file" name="image" class="form-control" placeholder="image">
-                    <img src="/image/{{ $client->image }}" width="300px">
+                    <img src="/image/{{ $client->image }}" width="100px">
                 </div>
             </div>
 </div>

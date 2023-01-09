@@ -111,9 +111,25 @@ class ClientController extends Controller
             'name' => 'required',
             'federal_id' => 'required',
             'code' => 'required',
+            
         ]);
+        $input = $request->all();
+  
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
+          
+        $client->update($input);
+        // dd($client);
     
-        $client->update($request->all());
+      
+    
+        // $client->update($request->all());
     
         return redirect()->route('clients.index')
                         ->with('success','Client edited successfully');

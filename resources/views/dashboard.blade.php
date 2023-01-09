@@ -60,6 +60,40 @@ More info <i class="fa fa-arrow-circle-right"></i>
 
 
 
+<div class="col-md-5">
+
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">All Clients</h3>
+<div class="card-tools">
+<span class="badge badge-danger">{{ $clients }} Clients</span>
+<button type="button" class="btn btn-tool" data-card-widget="collapse">
+<i class="fas fa-minus"></i>
+</button>
+<button type="button" class="btn btn-tool" data-card-widget="remove">
+<i class="fas fa-times"></i>
+</button>
+</div>
+</div>
+@foreach($list as $lists)
+<div class="card-body p-0">
+<ul class="users-list clearfix">
+<li>
+<td><img src="/image/{{ $lists->image }}" width="80px"></td>
+<a class="users-list-name">{{$lists->name}}</a>
+<a class="users-list-date">Started using at ➡️ {{$lists->fillup_date}}</a>
+</li>
+</ul>
+</div>
+@endforeach
+<div class="card-footer text-center">
+<a href="{{Route('clients.index')}}">View All Clients</a>
+</div>
+
+</div>
+
+</div>
+
 
 
 
