@@ -74,6 +74,7 @@ More info <i class="fa fa-arrow-circle-right"></i>
 
 
 
+
 @stop
 
 @section('content')

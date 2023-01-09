@@ -47,12 +47,18 @@
                      
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" onclick="return myFunction();" class="btn btn-danger">Delete</button>
                 </form>
             @endrole
             </td>
         </tr>
         @endforeach
+        <script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+ </script>
     </table>
   
     {!! $federals->links() !!}

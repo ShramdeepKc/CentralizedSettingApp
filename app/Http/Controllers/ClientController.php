@@ -55,6 +55,7 @@ class ClientController extends Controller
             'code' => 'required',
             'federal_id' => 'required',  
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'fillup_date'=>'required',
             
         ]);
         $input = $request->all();

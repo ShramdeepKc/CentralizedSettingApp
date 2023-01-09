@@ -42,7 +42,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <img src="{{URL::asset('/image/20221229101401.png')}}" alt="profile Pic" height="200" width="200">
+    <!-- <img src="{{URL::asset('/image/20221229101401.png')}}" alt="profile Pic" height="200" width="200"> -->
     <table class="table table-bordered">
         <tr>
             <th>No</th>  
@@ -50,6 +50,7 @@
             <th>Name</th>
             <th>Code</th>
             <th>Images</th>
+            <th>Date</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($clients as $client)
@@ -64,6 +65,7 @@
             <td>{{ $client->name }}</td>
             <td>{{ $client->code }}</td>
             <td><img src="/image/{{ $client->image }}" width="100px"></td>
+            <td>{{$client->fillup_date}}</td>
             <td>
            @role('admin')
             <form action="{{ route('clients.destroy',$client->id) }}" method="POST">
@@ -71,14 +73,19 @@
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" onclick="return myFunction();" class="btn btn-danger">Delete</button>
                 
             </form>
             @endrole
             </td>
         </tr>
         @endforeach
-      
+        <script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+ </script>
     </table>
   
     {!! $clients->links() !!}

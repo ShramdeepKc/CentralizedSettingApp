@@ -18,6 +18,7 @@ class CreateClientsTable extends Migration
             $table->string('name')->nullable();
             $table->string('code')->nullable();
             $table->string('image');
+            $table->date('fillup_date')->nullable();
             $table->foreignId('federal_id')->constrained('federals')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

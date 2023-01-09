@@ -63,7 +63,7 @@
                 @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" onclick="return myFunction();" class="btn btn-danger">Delete</button>
             </td>
             @endrole
                    
@@ -75,7 +75,12 @@
         @endforeach
       
     </table>
-  
+    <script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this ?"))
+      event.preventDefault();
+  }
+ </script>
    
 @stop
 

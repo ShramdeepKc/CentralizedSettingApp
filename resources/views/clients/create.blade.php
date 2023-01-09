@@ -59,8 +59,8 @@
         </div>   
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <label for="filupDate">Birthday:</label>
-                 <input type="date" id="filup_date" name="filup_date">
+                <label for="filupDate">Fillup Date:</label>
+                 <input type="date" id="fillup_date" name="fillup_date">
                </div>
         </div> 
                                                            
