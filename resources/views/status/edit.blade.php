@@ -22,15 +22,17 @@
 <form action="{{ route('status.update',$status->id) }}" method="POST">
     @csrf
     @method('PUT')
-
+<div class="card">
+   <div class="card-body row">
+   <div class="col">
     <div class="col-xs-4 col-sm-4 col-md-4 ">
-    <div class="form-group1">
+     <div class="form-group">
           <label for="client">Clients:</label>
           <select id="client" class="form-control" name="client_id" value="clients">
           @foreach ($clients as $client)
           <option value="{{$client->id}}" {{$client->id==$status->client_id ? 'selected':''}}>{{$client->name}}</option>
           @endforeach
-     </select></div>
+      </select></div>
 </div><br>
 <div class="col-xs-4 col-sm-4 col-md-4 "> 
     <div class="form-group1">
@@ -63,6 +65,8 @@
         <div class="col-xs-7 col-sm-7 col-md-7 ">
                 <button type="submit" class="btn btn-primary">EDIT</button>
         </div>
+    </div>
+    </div>
     </div>
    
 </form>

@@ -3,15 +3,16 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+<h1 class="btn btn-info" >EDIT PAGE</h1>
 @stop
 
 @section('content')
 <form action="{{ route('clients.update',$client->id) }}" method="POST" enctype="multipart/form-data"   >
         @csrf
         @method('PUT')
-  
-        <div class="form-group">
+        <div class="card">
+   <div class="card-body row">
+        <div class="col">
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -51,7 +52,8 @@
                 <button type="submit" class="btn btn-primary">Edit</button>
         </div>
     </div>
-   
+</div>
+</div>
 </form>
 @stop
 

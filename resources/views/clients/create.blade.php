@@ -22,8 +22,9 @@
    
 <form action="{{ route('clients.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-  
-    <div class="form-group">
+<div class="card">
+   <div class="card-body row">
+     <div class="col">
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -37,8 +38,8 @@
                
             </div>
         </div>
-        <div class="col-xs-5 col-sm-5 col-md-5 text-center">
-    <div class="form-group row">
+        <div class="col-xs-5 col-sm-5 col-md-5">
+    <div class="form-group ">
           <label for="federal">Federals:</label>
           <select id="federal" name="federal_id" class="form-control" value="federal">
           @foreach ($federal as $fed)
@@ -46,7 +47,7 @@
           @endforeach
      </select></div>
 </div>
-<div class="col-xs-5 col-sm-5 col-md-5">
+<div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Image:</strong>
                 <input type="file" name="image" class="form-control" placeholder=" Upload image">
@@ -64,6 +65,8 @@
                 <button type="submit" class="btn btn-primary">ADD</button>
         </div>
     </div>
+  </div>
+</div>
    
 </form>
 

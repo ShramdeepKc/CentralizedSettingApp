@@ -23,7 +23,8 @@
 <form action="{{ route('products.update',$product->id) }}" method="POST">
 @csrf
         @method('PUT')
-  
+<div class="card">
+   <div class="card-body row">
      <div class="col">
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
@@ -47,6 +48,8 @@
         <div class="col-xs-5 col-sm-5 col-md-5 ">
                 <button type="submit" class="btn btn-primary">Edit</button>
         </div>
+    </div>
+    </div>
     </div>
    
 </form>

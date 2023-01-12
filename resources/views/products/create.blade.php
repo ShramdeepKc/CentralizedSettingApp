@@ -22,7 +22,8 @@
    
 <form action="{{ route('products.store') }}" method="POST">
     @csrf
-  
+<div class="card">
+   <div class="card-body row">
      <div class="col">
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
@@ -47,6 +48,8 @@
                 <button type="submit" class="btn btn-primary">ADD</button>
         </div>
     </div>
+    </div>
+</div>
    
 </form>
 @stop
@@ -58,4 +61,6 @@
 @section('js')
     <script> console.log('Hi!'); </script>
 @stop
+
+
 

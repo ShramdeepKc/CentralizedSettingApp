@@ -23,7 +23,8 @@
    
 <form action="{{ route('federals.store') }}" method="POST">
     @csrf
-  
+    <div class="card">
+   <div class="card-body row">
      <div class="col">
         <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
@@ -40,6 +41,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12 ">
                 <button type="submit" class="btn btn-secondary">ADD</button>
         </div>
+    </div>
+    </div>
     </div>
    
 </form>

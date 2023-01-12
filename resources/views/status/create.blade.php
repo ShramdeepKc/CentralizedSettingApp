@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+<h1 class="btn btn-info" >CREATE PAGE</h1>
 @stop
 
 @section('content')
@@ -21,7 +21,10 @@
    
 <form action="{{ route('status.store') }}" method="POST">
     @csrf
-  
+
+    <div class="card">
+   <div class="card-body row">
+     <div class="col">
     <div class="col-xs-5 col-sm-5 col-md-5 ">
     <div class="form-group1">
           <label for="client" >Clients:</label>
@@ -61,6 +64,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12 ">
                 <button type="submit" class="btn btn-primary">ADD</button>
         </div>
+    </div>
+    </div>
     </div>
    
 </form>
