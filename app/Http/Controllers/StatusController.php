@@ -36,7 +36,7 @@ class StatusController extends Controller
         }
         $clients = Client::all();
         $products = Product::all();
-
+        
 
 
         return view('status.index',compact('clients','products','status','search'))

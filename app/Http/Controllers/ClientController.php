@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\Federal;
 use Illuminate\Http\Request;
-use Spatie\Permission\Contracts\Role;
+// use Spatie\Permission\Models\Role;
+// use Spatie\Permission\Models\Permission;
 
 class ClientController extends Controller
 {
@@ -18,7 +19,8 @@ class ClientController extends Controller
     {
        
         // $data = [];
-       
+        // $role = Role::create(['name' => 'writer']);
+        // $permission = Permission::create(['name' => 'edit articles']);
 
         $federals = Federal::all();
         // return $arr;

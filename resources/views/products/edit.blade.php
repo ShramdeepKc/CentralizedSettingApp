@@ -3,17 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+<a class="btn btn-info" >EDIT CLIENT</a>
 @stop
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Update Product</h2>
-        </div>      
-    </div>
-</div>
+
    
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -30,27 +24,27 @@
 @csrf
         @method('PUT')
   
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+     <div class="col">
+        <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Name:</strong>
                 <input type="text" name="name" class="form-control"  value="{{ $product->name }}">
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-3 col-sm-3 col-md-3">
             <div class="form-group">
                 <strong>Code:</strong>
-                <textarea class="form-control"  name="code" placeholder="">{{ $product->code }}</textarea>
+                <input type="text" class="form-control"  name="code" value="{{ $product->code }}"></input>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-7 col-sm-7 col-md-7">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control"  name="code" placeholder="">{{ $product->description }}</textarea>
+                <input type="text" class="form-control"  name="description" value="{{ $product->description }}"></input>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-5 col-sm-5 col-md-5 ">
                 <button type="submit" class="btn btn-primary">Edit</button>
         </div>
     </div>

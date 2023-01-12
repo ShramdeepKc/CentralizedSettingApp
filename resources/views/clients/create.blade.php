@@ -3,17 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+<a class="btn btn-info" >ADD NEW CLIENT</a>
 @stop
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New Client</h2>
-        </div>      
-    </div>
-</div>
+
    
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -29,48 +23,57 @@
 <form action="{{ route('clients.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
   
-     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="form-group">
+        <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" class="form-control" placeholder=" Enter Your Name">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Code:</strong>
-                <input type="text"   name="code" placeholder="Code"></textarea>
+                <input type="text"  name="code" class="form-control" placeholder="Code">
+               
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-    <div class="form-group1">
+        <div class="col-xs-5 col-sm-5 col-md-5 text-center">
+    <div class="form-group row">
           <label for="federal">Federals:</label>
-          <select id="federal" name="federal_id" value="federal">
+          <select id="federal" name="federal_id" class="form-control" value="federal">
           @foreach ($federal as $fed)
           <option value="{{$fed->id}}">{{$fed->name}}</option>
           @endforeach
      </select></div>
 </div>
-<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <strong>Image:</strong>
-                <input type="file" name="image" class="form-control" placeholder="image">
+                <input type="file" name="image" class="form-control" placeholder=" Upload image">
             </div>
         </div>   
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-5 col-sm-5 col-md-5">
             <div class="form-group">
                 <label for="filupDate">Fillup Date:</label>
-                 <input type="date" id="fillup_date" name="fillup_date">
+                 <input type="date" id="fillup_date" class="form-control" name="fillup_date">
                </div>
         </div> 
                                                            
 
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-5 col-sm-5 col-md-5 text-center">
                 <button type="submit" class="btn btn-primary">ADD</button>
         </div>
     </div>
    
 </form>
+
+
+
+
+
+
+
+
 @stop
 
 @section('css')

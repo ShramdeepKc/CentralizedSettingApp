@@ -7,20 +7,18 @@
 @stop
 
 @section('content')
-<div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Product View</h2>
-            </div>
-        </div>
-    </div>
+
     @role('admin')
+    <div class="row">
+    <div class="col-lg-12 margin-tb">
     <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create  Products</a>
-            </div><br> 
+            </div>
+    </div>
+    </div><br> 
    @endrole
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-secondary">
             <p>{{ $message }}</p>
         </div>
     @endif

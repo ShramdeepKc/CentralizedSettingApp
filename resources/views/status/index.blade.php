@@ -3,21 +3,15 @@
 @section('title')
 
 @section('content_header')
- 
+<h1 class="btn btn-info" >STATUS VIEW</h1>
 @stop
 
 @section('content')
-<div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Status View</h2>
-            </div>
-        </div>
-    </div>
+
     <form action="" class="col-4">
         <div class="form-group">
         
-          <input type="search" name="search" id="" class="form-control" placeholder="Search by Name" aria-describedby="helpId" value="{{$search}}"><br>
+          <input type="search" name="search" id="" class="form-control" placeholder="Search by Name" aria-describedby="helpId" value="{{$search}}">
           <button class="btn btn-primary">Search</button>
         </div>
        
@@ -32,7 +26,7 @@
    
    
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-secondary">
             <p>{{ $message }}</p>
         </div>
     @endif

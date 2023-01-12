@@ -16,12 +16,12 @@
     </div>
     @role('admin')
     <div class="pull-left">
-                <a class="btn btn-danger" href="{{ route('federals.create') }}"> Create New federals</a>
+                <a class="btn btn-info" href="{{ route('federals.create') }}"> Create New federals</a>
             </div><br>
     @endrole
    
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-secondary">
             <p>{{ $message }}</p>
         </div>
     @endif

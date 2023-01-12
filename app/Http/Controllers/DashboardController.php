@@ -7,6 +7,7 @@ use App\Models\Status;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class DashboardController extends Controller
 {
@@ -39,7 +40,8 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        // $role = Role::create(['name' => 'editor']);
+
     }
 
     /**

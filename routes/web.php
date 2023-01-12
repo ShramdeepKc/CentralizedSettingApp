@@ -26,7 +26,8 @@ Route::resource('clients', ClientController::class)
 ->middleware(['auth']);
 Route::resource('products', ProductController::class)->middleware(['auth']);
 Route::resource('status', StatusController::class)->middleware(['auth']);
-
 Route::resource('/', DashboardController::class)->middleware(['auth']);
+
+  
 
 require __DIR__.'/auth.php';

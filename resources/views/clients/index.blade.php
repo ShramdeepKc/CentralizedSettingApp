@@ -17,7 +17,7 @@
    
     @role('admin')
     <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('clients.create') }}"> Create New Client</a>
+                <a class="btn btn-secondary" href="{{ route('clients.create') }}"> Create New Client</a>
             </div><br>
   @endrole
             <!-- <div class="pull-left">
@@ -38,7 +38,7 @@
             
    
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-secondary">
             <p>{{ $message }}</p>
         </div>
     @endif
